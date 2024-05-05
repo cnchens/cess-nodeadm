@@ -1,0 +1,174 @@
+## node configurations template
+node:
+   ## the mode of node: multibucket
+   mode: "multibucket"
+   ## the profile of node: devnet/testnet/mainnet
+   profile: "testnet"
+   # default chain url for bucket, can be overwritten in buckets[] as below
+   chainWsUrl: "ws://127.0.0.1:9944/"
+   # default backup chain urls for bucket, can be overwritten in buckets[] as below
+   backupChainWsUrls: ["wss://testnet-rpc0.cess.cloud/ws/", "wss://testnet-rpc1.cess.cloud/ws/", "wss://testnet-rpc2.cess.cloud/ws/", "wss://testnet-rpc3.cess.cloud/ws/"]
+
+## chain configurations
+## set option: '--skip-chain' or '-s' to skip installing chain (cess-multibucket-admin install --skip-chain)
+## if set option: --skip-chain, please set official chain in buckets[].chainWsUrl or others chains you know
+chain:
+   ## the name of chain node
+   name: "cess"
+   ## the port of chain node
+   port: 30336
+   ## listen rpc service at port 9944
+   rpcPort: 9944
+
+## bucket configurations  (multi storage miner mode)
+buckets:
+   - name: "bucket_1"
+     # P2P communication port
+     port: 15001
+     # Maximum space used, the unit is GiB
+     UseSpace: 2000
+     # Number of cpu's used, 0 means use all
+     UseCpu: 2
+     # earnings account
+     earningsAcc: "5FAA6WgbKK6YSHdG4YfFpDk4fEcqrN6edQ6LBL5gEnojEB2D"
+     # Staking account
+     # If you fill in the staking account, the staking will be paid by the staking account,
+     # otherwise the staking will be paid by the earningsAcc.
+     stakingAcc: "5D9iMAYZzC7e63ys8aN6mSnq7FU9Ypmt2853F3nNP2moH7o2"
+     # Signature account mnemonic
+     # each bucket's mnemonic should be different
+     mnemonic: "speed ugly category family attitude now noise element miss witness history renew"
+     # bucket work at this path
+     diskPath: "/cess/sdb1"
+     # The rpc endpoint of the chain
+     # `official chain: wss://testnet-rpc0.cess.cloud/ws/ wss://testnet-rpc1.cess.cloud/ws/ wss://testnet-rpc2.cess.cloud/ws/` "wss://testnet-rpc3.cess.cloud/ws/"
+     chainWsUrl: "ws://127.0.0.1:9944/"
+     backupChainWsUrls: []
+     # Bootstrap Nodes
+     Boot: "_dnsaddr.boot-bucket-testnet.cess.cloud"
+     
+   - name: "bucket_2"
+     # P2P communication port
+     port: 15002
+     # Maximum space used, the unit is GiB
+     UseSpace: 2000
+     # Number of cpu's used
+     UseCpu: 2
+     # earnings account
+     earningsAcc: "5FAA6WgbKK6YSHdG4YfFpDk4fEcqrN6edQ6LBL5gEnojEB2D"
+     # Staking account
+     # If you fill in the staking account, the staking will be paid by the staking account,
+     # otherwise the staking will be paid by the earningsAcc.
+     stakingAcc: "5D9iMAYZzC7e63ys8aN6mSnq7FU9Ypmt2853F3nNP2moH7o2"
+     # Signature account mnemonic
+     # each bucket's mnemonic should be different
+     mnemonic: "jelly donor that horn lava glue hello popular wave bone child you"
+     # bucket work at this path
+     diskPath: "/cess/sdc1"
+     # The rpc endpoint of the chain
+     # `official chain: wss://testnet-rpc0.cess.cloud/ws/ wss://testnet-rpc1.cess.cloud/ws/ wss://testnet-rpc2.cess.cloud/ws/` "wss://testnet-rpc3.cess.cloud/ws/"
+     chainWsUrl: "ws://127.0.0.1:9944/"
+     backupChainWsUrls: []
+     # Bootstrap Nodes
+     Boot: "_dnsaddr.boot-bucket-testnet.cess.cloud"
+
+   - name: "bucket_3"
+     # P2P communication port
+     port: 15003
+     # Maximum space used, the unit is GiB
+     UseSpace: 2000
+     # Number of cpu's used
+     UseCpu: 2
+     # earnings account
+     earningsAcc: "5FAA6WgbKK6YSHdG4YfFpDk4fEcqrN6edQ6LBL5gEnojEB2D"
+     # Staking account
+     # If you fill in the staking account, the staking will be paid by the staking account,
+     # otherwise the staking will be paid by the earningsAcc.
+     stakingAcc: "5D9iMAYZzC7e63ys8aN6mSnq7FU9Ypmt2853F3nNP2moH7o2"
+     # Signature account mnemonic
+     # each bucket's mnemonic should be different
+     mnemonic: "source crumble push swarm old hello green day sign unit stage crystal"
+     # bucket work at this path
+     diskPath: "/cess/sdd1"
+     # The rpc endpoint of the chain
+     # `official chain: wss://testnet-rpc0.cess.cloud/ws/ wss://testnet-rpc1.cess.cloud/ws/ wss://testnet-rpc2.cess.cloud/ws/` "wss://testnet-rpc3.cess.cloud/ws/"
+     chainWsUrl: "ws://127.0.0.1:9944/"
+     backupChainWsUrls: []
+     # Bootstrap Nodes
+     Boot: "_dnsaddr.boot-bucket-testnet.cess.cloud"
+
+   - name: "bucket_4"
+     # P2P communication port
+     port: 15004
+     # Maximum space used, the unit is GiB
+     UseSpace: 2000
+     # Number of cpu's used
+     UseCpu: 2
+     # earnings account
+     earningsAcc: "5FAA6WgbKK6YSHdG4YfFpDk4fEcqrN6edQ6LBL5gEnojEB2D"
+     # Staking account
+     # If you fill in the staking account, the staking will be paid by the staking account,
+     # otherwise the staking will be paid by the earningsAcc.
+     stakingAcc: "5D9iMAYZzC7e63ys8aN6mSnq7FU9Ypmt2853F3nNP2moH7o2"
+     # Signature account mnemonic
+     # each bucket's mnemonic should be different
+     mnemonic: "minute stem slogan belt manual crack pluck matrix spin salon gown fault"
+     # bucket work at this path
+     diskPath: "/cess/sde1"
+     # The rpc endpoint of the chain
+     # `official chain: wss://testnet-rpc0.cess.cloud/ws/ wss://testnet-rpc1.cess.cloud/ws/ wss://testnet-rpc2.cess.cloud/ws/` "wss://testnet-rpc3.cess.cloud/ws/"
+     chainWsUrl: "ws://127.0.0.1:9944/"
+     backupChainWsUrls: []
+     # Bootstrap Nodes
+     Boot: "_dnsaddr.boot-bucket-testnet.cess.cloud"
+
+   - name: "bucket_5"
+     # P2P communication port
+     port: 15005
+     # Maximum space used, the unit is GiB
+     UseSpace: 2000
+     # Number of cpu's used
+     UseCpu: 2
+     # earnings account
+     earningsAcc: "5FAA6WgbKK6YSHdG4YfFpDk4fEcqrN6edQ6LBL5gEnojEB2D"
+     # Staking account
+     # If you fill in the staking account, the staking will be paid by the staking account,
+     # otherwise the staking will be paid by the earningsAcc.
+     stakingAcc: "5D9iMAYZzC7e63ys8aN6mSnq7FU9Ypmt2853F3nNP2moH7o2"
+     # Signature account mnemonic
+     # each bucket's mnemonic should be different
+     mnemonic: "shock fiber blur woman vocal pact matrix genre educate bamboo final village"
+     # bucket work at this path
+     diskPath: "/cess/sdf1"
+     # The rpc endpoint of the chain
+     # `official chain: wss://testnet-rpc0.cess.cloud/ws/ wss://testnet-rpc1.cess.cloud/ws/ wss://testnet-rpc2.cess.cloud/ws/` "wss://testnet-rpc3.cess.cloud/ws/"
+     chainWsUrl: "ws://127.0.0.1:9944/"
+     backupChainWsUrls: []
+     # Bootstrap Nodes
+     Boot: "_dnsaddr.boot-bucket-testnet.cess.cloud"
+
+   - name: "bucket_6"
+     # P2P communication port
+     port: 15006
+     # Maximum space used, the unit is GiB
+     UseSpace: 2000
+     # Number of cpu's used
+     UseCpu: 2
+     # earnings account
+     earningsAcc: "5FAA6WgbKK6YSHdG4YfFpDk4fEcqrN6edQ6LBL5gEnojEB2D"
+     # Staking account
+     # If you fill in the staking account, the staking will be paid by the staking account,
+     # otherwise the staking will be paid by the earningsAcc.
+     stakingAcc: "5D9iMAYZzC7e63ys8aN6mSnq7FU9Ypmt2853F3nNP2moH7o2"
+     # Signature account mnemonic
+     # each bucket's mnemonic should be different
+     mnemonic: "pair fame crush zone eight horror gossip salad loan rally image clump"
+     # bucket work at this path
+     diskPath: "/cess/sdg1"
+     # The rpc endpoint of the chain
+     # `official chain: wss://testnet-rpc0.cess.cloud/ws/ wss://testnet-rpc1.cess.cloud/ws/ wss://testnet-rpc2.cess.cloud/ws/` "wss://testnet-rpc3.cess.cloud/ws/"
+     chainWsUrl: "ws://127.0.0.1:9944/"
+     backupChainWsUrls: []
+     # Bootstrap Nodes
+     Boot: "_dnsaddr.boot-bucket-testnet.cess.cloud"
+
